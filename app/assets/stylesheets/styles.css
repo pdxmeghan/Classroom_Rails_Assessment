@@ -1,5 +1,6 @@
 h1 {
   text-align:center;
+  color: #18E861;
 }
 
 ul {
@@ -10,7 +11,28 @@ ul ul {
   list-style-type: circle;
 }
 
+p {
+  margin-left: 50px;
+  padding-left: 50px;
+}
+
+a:hover {
+  text-decoration: underline;
+  color:#67DF89;
+}
+
 button {
   border-radius: 5px;
   background-color: #18ACE8;
+}
+
+.footer {
+  padding: 10px;
+  margin:10px;
+}
+
+form {
+  padding: 10px;
+  margin: 10px;
+
 }
