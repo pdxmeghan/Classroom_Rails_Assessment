@@ -1,0 +1,16 @@
+h1 {
+  text-align:center;
+}
+
+ul {
+  list-style-type: none
+}
+
+ul ul {
+  list-style-type: circle;
+}
+
+button {
+  border-radius: 5px;
+  background-color: #18ACE8;
+}
