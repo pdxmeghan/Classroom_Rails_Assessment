@@ -1,0 +1,11 @@
+  <label for="student_name">Student Name</label>
+  <input id="student_name" name="student[name]" type="text" value="<%= @student.name %>">
+  <br>
+  <label for="course_id">Course Name</label>
+  <select id="course_id" name="student[course_id]">
+    <% @courses.each do |course| %>
+      <option value='<%= course.id %>'><%= course.name %></option>
+    <% end %>
+  </select>
+</br>
+
