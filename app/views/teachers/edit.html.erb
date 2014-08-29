@@ -1,0 +1,10 @@
+<h1>Edit <%= @teacher.name %></h1>
+
+<%= render('layouts/errors', :object => @teacher) %>
+
+
+<form action="/teachers/<%= @teacher.id %>" method="post">
+  <input name="_method" type="hidden" value="patch">
+  <%= render('forms') %>
+  <button>Update Teacher</button>
+</form>

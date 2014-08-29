@@ -23,4 +23,19 @@ class TeachersController < ApplicationController
     @teacher = Teacher.find(params[:id])
     render('teachers/show.html.erb')
   end
+
+  def edit
+    @teacher = Teacher.find(params[:id])
+    render('teachers/edit.html.erb')
+  end
+
+  def update
+    @teacher = Teacher.find(params[:id])
+    if @teacher.update(params[:teacher])
+      flash[:notice] = "Your teacher has been updated"
+      redirect_to("/teachers/#{@teacher.id}")
+    else
+      render('teachers/edit.html.erb')
+    end
+  end
 end
