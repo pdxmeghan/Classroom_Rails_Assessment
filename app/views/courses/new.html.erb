@@ -1,0 +1,10 @@
+<h1>Add a Course</h1>
+
+<%= render('layouts/errors', :object => @course) %>
+
+<form action="/courses" method="post">
+
+  <%=render('forms') %>
+  <button>Add Course</button>
+</form>
+
