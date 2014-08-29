@@ -28,7 +28,9 @@ button {
 
 .footer {
   padding: 10px;
+  padding-top: 100px;
   margin:10px;
+  text-align: center;
 }
 
 form {
