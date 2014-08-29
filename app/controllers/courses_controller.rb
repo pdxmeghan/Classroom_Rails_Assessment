@@ -40,4 +40,11 @@ class CoursesController < ApplicationController
       render('courses/edit.html.erb')
     end
   end
+
+  def destroy
+    @course = Course.find(params[:id])
+    @course.destroy
+    flash[:notice] = "Your course has been deleted"
+    redirect_to('/courses')
+  end
 end

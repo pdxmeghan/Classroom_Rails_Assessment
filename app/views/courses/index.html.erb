@@ -6,6 +6,10 @@
   <% ordered_courses.each do |course| %>
     <li><a href="/courses/<%= course.id %>"><%= course.name %></a> ||
         <a href="/courses/<%= course.id %>/edit">Edit<a> ||
+        <a href="/courses/<%= course.id %>"
+          data-confirm="Permanently delete course?"
+          data-method="delete"
+          rel="nofollow">Delete Course</a>
     </li>
   <% end %>
 </ul>

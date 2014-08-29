@@ -14,4 +14,5 @@ Rails.application.routes.draw do
   match('courses', {:via => :post, :to => 'courses#create'})
   match('courses/:id/edit', {:via => :get, :to => 'courses#edit'})
   match('courses/:id', {:via => [:patch, :put], :to => 'courses#update'})
+  match('courses/:id', {:via => :delete, :to => 'courses#destroy'})
 end
