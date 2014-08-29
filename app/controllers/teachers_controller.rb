@@ -1,6 +1,7 @@
 class TeachersController < ApplicationController
   def index
     @teachers = Teacher.all
+    @courses = Course.all
     render('teachers/index.html.erb')
   end
 
@@ -21,6 +22,7 @@ class TeachersController < ApplicationController
 
   def show
     @teacher = Teacher.find(params[:id])
+    @courses = @teacher.courses
     render('teachers/show.html.erb')
   end
 

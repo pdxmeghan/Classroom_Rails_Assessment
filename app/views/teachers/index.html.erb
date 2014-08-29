@@ -1,6 +1,7 @@
 <h1>Teachers</h1>
 
 <% ordered_teachers = @teachers.all.sort_by{|teacher| teacher.id} %>
+<% ordered_courses = @courses.all.sort_by{|course| course.id} %>
 
 <ul>
   <% ordered_teachers.each do |teacher| %>
@@ -11,7 +12,17 @@
            data-method="delete"
            rel="nofollow">Delete Teacher</a>
     </li>
+
+    <ul>
+      <% ordered_courses.each do |course| %>
+        <% if course.teacher_id == teacher.id %>
+          <li><a href="/courses/<%= course.id %>"><%= course.name %></li>
+        <% end %>
+      <% end %>
+    </ul>
+
   <% end %>
 </ul>
 
 <p><a href="/teachers/new">Add a new teacher</a></p>
+<p><a href="/courses/new">Add a new course</a></p>

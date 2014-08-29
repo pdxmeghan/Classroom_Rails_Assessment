@@ -1,3 +1,10 @@
 <h1><%= @course.name %></h1>
 
+<% @teachers.each do |teacher| %>
+  <% if teacher.id == @course.teacher_id %>
+    <p>Taught by <a href='/teachers/<%= teacher.id %>'><%= teacher.name %></a><p>
+  <% end %>
+<% end %>
+
+
 <p><a href="/teachers">Go Home</a></p>

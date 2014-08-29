@@ -22,6 +22,7 @@ class CoursesController < ApplicationController
 
   def show
     @course = Course.find(params[:id])
+    @teachers = Teacher.all
     render('courses/show.html.erb')
   end
 
