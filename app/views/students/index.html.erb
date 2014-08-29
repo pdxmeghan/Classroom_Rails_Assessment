@@ -2,7 +2,13 @@
 
 <ul>
   <% @students.each do |student| %>
-    <li><a href="/students/<%= student.id %>"><%= student.name %><li>
+    <li><a href="/students/<%= student.id %>"><%= student.name %> </a>||
+        <a href="/students/<%= student.id %>/edit"> Edit</a> ||
+        <a href="/students/<%= student.id %>"
+           data-confirm="Permanently delete student?"
+           data-method="delete"
+           rel="nofollow">Delete Student</a>
+      </li>
   <% end %>
 </ul>
 

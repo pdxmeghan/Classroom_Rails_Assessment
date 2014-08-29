@@ -25,4 +25,27 @@ class StudentsController < ApplicationController
     @courses = Course.all
     render('students/show.html.erb')
   end
+
+  def edit
+    @student = Student.find(params[:id])
+    @courses = Course.all
+    render('students/edit.html.erb')
+  end
+
+  def update
+    @student = Student.find(params[:id])
+    if @student.update(params[:student])
+      flash[:notice] = "Your student has been updated"
+      redirect_to("students/#{@student.id}")
+    else
+      render('students/edit.html.erb')
+    end
+  end
+
+  def destroy
+    @student = Student.find(params[:id])
+    @student.destroy
+    flash[:notice] = "You have deleted this student"
+    redirect_to('/students')
+  end
 end
