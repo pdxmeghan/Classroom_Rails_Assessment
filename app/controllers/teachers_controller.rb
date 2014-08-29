@@ -38,4 +38,11 @@ class TeachersController < ApplicationController
       render('teachers/edit.html.erb')
     end
   end
+
+  def destroy
+    @teacher = Teacher.find(params[:id])
+    @teacher.destroy
+    flash[:notice] = "Your teacher has been deleted"
+    redirect_to('/teachers')
+  end
 end

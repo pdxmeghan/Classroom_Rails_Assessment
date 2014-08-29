@@ -1,2 +1,17 @@
 <h1>Teachers</h1>
 
+<% ordered_teachers = @teachers.all.sort_by{|teacher| teacher.id} %>
+
+<ul>
+  <% ordered_teachers.each do |teacher| %>
+    <li><a href="/teachers/<%= teacher.id %>"><%= teacher.name %></a> ||
+        <a href="/teachers/<%= teacher.id %>/edit">Edit</a> ||
+        <a href="/teachers/<%= teacher.id %>"
+           data-confirm="Permanently delete teacher?"
+           data-method="delete"
+           rel="nofollow">Delete Teacher</a>
+    </li>
+  <% end %>
+</ul>
+
+<p><a href="/teachers/new">Add a new teacher</a></p>
